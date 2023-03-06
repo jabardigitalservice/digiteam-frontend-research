@@ -3,7 +3,7 @@
   <BaseCard class="items-center h-screen">
     <h2 class="text-lg text-center font-semibold mb-2">Hi {{ user.name }},</h2>
     <h3
-      v-if="tenants.length===0"
+      v-if="tenants.length === 0"
       class="text-md text-center font-semibold mb-2"
     >
       You haven't joined any organization yet
@@ -16,7 +16,7 @@
 </template>
 
 <script setup>
-const user = JSON.parse(localStorage.getItem('user'));
+const user = JSON.parse(localStorage.getItem("user"));
 const tenants = ref("");
 const organizationStore = useOrganizationStore();
 

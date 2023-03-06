@@ -1,7 +1,5 @@
-<!-- eslint-disable vue/multi-word-component-names -->
 <template>
-  <TheHeader />
-  <div class="max-w-lg h-screen mx-auto pb-5">
+  <main class="max-w-lg min-h-screen mx-auto">
     <slot />
-  </div>
+  </main>
 </template>

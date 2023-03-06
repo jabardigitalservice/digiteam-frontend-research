@@ -20,5 +20,5 @@
 defineComponent({
   name: "UserProfile",
 });
-const props = defineProps(['name', 'organization']);
+const props = defineProps(["name", "organization"]);
 </script>

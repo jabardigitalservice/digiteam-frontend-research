@@ -6,7 +6,7 @@
 
 <script setup>
 const router = useRouter();
-const props = defineProps(['tenants']);
+const props = defineProps(["tenants"]);
 
 defineComponent({
   name: "TenantList",
