@@ -1,12 +1,14 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <template>
-  <UserProfile
-    v-if="dataOrganization"
-    :name="user.name"
-    :organization="dataOrganization.name"
-  />
-  <h3 class="text-md font-semibold mt-3 mb-2 mx-3">Artikel</h3>
-  <Article v-if="articles" :articles="articles" />
+  <BaseContainer>
+    <UserProfile
+      v-if="dataOrganization"
+      :name="user.name"
+      :organization="dataOrganization.name"
+    />
+    <h3 class="text-md font-semibold mt-3 mb-2">Artikel</h3>
+    <Article v-if="articles" :articles="articles" />
+  </BaseContainer>
 </template>
 
 <script setup>
@@ -32,7 +34,7 @@ function getValidate() {
 }
 
 const getArticle = async () => {
-  await useMyFetch(`/article?schema=${dataOrganization.schema}`, {
+  await useMyFetch(`/article?organization=${dataOrganization.slug}`, {
     method: "GET",
   }).then((response) => {
     articles.value = response.data;

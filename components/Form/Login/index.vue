@@ -13,6 +13,7 @@
                 name="email"
                 placeholder="Masukkan username atau email"
                 type="email"
+                label="Username/email"
               />
               <VErrorMessage
                 class="text-sm font-normal text-red-700"
@@ -31,6 +32,7 @@
                   name="password"
                   placeholder="Masukkan kata sandi"
                   :type="show ? 'password' : 'text'"
+                  label="Kata sandi"
                 />
                 <div
                   class="absolute inset-y-0 right-0 flex items-center px-3 cursor-pointer bg-gray-100 rounded-r-lg border border-gray-300 border-l-0"
