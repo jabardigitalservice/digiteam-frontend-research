@@ -2,7 +2,7 @@
   <div class="relative flex flex-wrap">
     <div class="w-full relative">
       <div class="mt-4">
-        <VForm :validation-schema="schema" @submit="login">
+        <VForm :validation-schema="schema" @submit="login" v-slot="{ validate }" >
           <div class="mx-auto max-w-lg">
             <div class="py-2">
               <label for="email" class="px-1 text-sm font-medium text-gray-800"
@@ -97,7 +97,7 @@
                 >Lupa kata sandi</a
               >
             </div>
-            <BaseButton :disabled="loading" @click="login">
+            <BaseButton :disabled="loading" @click="validate">
               <svg
                 v-if="loading"
                 aria-hidden="true"
@@ -132,12 +132,6 @@ import {
   DialogTitle,
   DialogDescription,
 } from "@headlessui/vue";
-// import * as yup from "yup";
-
-// const schema = yup.object({
-//   email: yup.string().required().label("Email / username"),
-//   password: yup.string().required().min(8).label("Password"),
-// });
 
 const schema = {
   email: "required",
