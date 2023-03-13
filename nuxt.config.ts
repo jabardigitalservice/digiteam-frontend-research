@@ -28,7 +28,7 @@ export default defineNuxtConfig({
     },
   },
   pwa: {
-    workbox: { enabled: false },
+    workbox: { enabled: true },
     meta: {
       title: "Digiteam 2.0",
       author: "JDS",

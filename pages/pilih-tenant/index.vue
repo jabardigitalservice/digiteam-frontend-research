@@ -2,9 +2,9 @@
 <template>
   <div class="bg-white items-center h-screen">
     <BaseContainer>
-      <h3 v-if="tenants.length === 0" class="text-md text-center font-semibold mb-2">Kamu belum bergabung ke dalam organisasi apapun</h3>
+      <h3 v-if="organizationStore.organization.length === 0" class="text-md text-center font-semibold mb-2">Kamu belum bergabung ke dalam organisasi apapun</h3>
       <h3 v-else class="text-md text-center font-semibold mb-2">Pilih Organisasi</h3>
-      <TenantList :tenants="tenants" />
+      <TenantList :tenants="organizationStore.organization" />
     </BaseContainer>
   </div>
 </template>
