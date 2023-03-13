@@ -10,7 +10,6 @@
 </template>
 
 <script setup>
-const user = JSON.parse(localStorage.getItem("user"));
 const tenants = ref("");
 const organizationStore = useOrganizationStore();
 
