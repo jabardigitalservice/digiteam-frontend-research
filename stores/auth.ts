@@ -5,7 +5,7 @@ export const useAuthStore = defineStore("auth", {
   }),
   actions: {
     async login(loginForm: any) {
-      await useMyFetch("/login", {
+      await useMyFetch("/login", '', {
         method: "POST",
         body: loginForm,
       })
@@ -21,7 +21,7 @@ export const useAuthStore = defineStore("auth", {
         });
     },
     async logout() {
-      await useMyFetch("/logout", {
+      await useMyFetch("/logout", '', {
         method: "GET",
       })
       .then(() => {

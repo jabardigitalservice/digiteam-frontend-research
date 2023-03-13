@@ -19,7 +19,7 @@ onMounted(() => {
 });
 
 const getTenant = async () => {
-  await useMyFetch("/me", {
+  await useMyFetch("/me", '', {
     method: "GET",
   }).then((response) => {
     tenants.value = response.data.user.organizations;

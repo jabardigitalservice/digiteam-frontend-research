@@ -36,7 +36,7 @@ function getValidate() {
 }
 
 const getArticle = async () => {
-  await useMyFetch(`/article?organization=${dataOrganization.slug}`, {
+  await useMyFetch(`/article`, `${dataOrganization.slug}`, {
     method: "GET",
   }).then((response) => {
     articles.value = response.data;

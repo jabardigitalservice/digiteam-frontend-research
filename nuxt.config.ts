@@ -2,7 +2,7 @@
 export default defineNuxtConfig({
   runtimeConfig: {
     public: {
-      baseURL1: process.env.BASE_URL_V1,
+      baseURL2: process.env.BASE_URL_V2,
     },
   },
   ssr: false,
