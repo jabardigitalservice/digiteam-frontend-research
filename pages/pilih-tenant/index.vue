@@ -10,7 +10,6 @@
 </template>
 
 <script setup>
-const user = JSON.parse(localStorage.getItem("user"));
 const tenants = ref("");
 const organizationStore = useOrganizationStore();
 
@@ -19,7 +18,7 @@ onMounted(() => {
 });
 
 const getTenant = async () => {
-  await useMyFetch("/me", {
+  await useMyFetch("/me", '', {
     method: "GET",
   }).then((response) => {
     tenants.value = response.data.user.organizations;

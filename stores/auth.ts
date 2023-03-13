@@ -5,7 +5,7 @@ export const useAuthStore = defineStore("auth", {
   }),
   actions: {
     async login(loginForm: any) {
-      await useMyFetch("/login", {
+      await useMyFetch("/login", '', {
         method: "POST",
         body: loginForm,
       })
@@ -20,11 +20,20 @@ export const useAuthStore = defineStore("auth", {
           throw error;
         });
     },
-    logout() {
-      this.user = "";
-      this.token = "";
-      localStorage.removeItem("user");
-      localStorage.removeItem("token");
+    async logout() {
+      await useMyFetch("/logout", '', {
+        method: "GET",
+      })
+      .then(() => {
+        this.user = "";
+        this.token = "";
+        localStorage.removeItem("user");
+        localStorage.removeItem("token");
+        localStorage.removeItem("organization");
+      })
+      .catch((error) => {
+        throw error;
+      });
     },
   },
 });
